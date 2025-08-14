@@ -43,12 +43,23 @@ void printZigZag(int n) {
 }
 
 
+int tower(int n, char a , char b , char c) {
+    if (n == 0) {
+        return 0;
+    }
+    tower(n - 1, a, c, b);
+    cout << "Move disk " << n << " from rod " << a << " to rod " << c << endl;
+    tower(n - 1, b, a, c);
+    return 0;
+}
 
 int main() {
 
 
     // Example usage of factorial
-    printZigZag(3);
-    cout << "Hello World\n";
+    // printZigZag(3);
+
+    tower(3, 'A', 'B', 'C');
+    // cout << "Hello World\n";
     return 0;
 }
